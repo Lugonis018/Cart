@@ -44,7 +44,7 @@ class SessionStorage implements StorageInterface, Countable
 
     public function unset($index)
     {
-        if($his->exists($index)){
+        if($this->exists($index)){
             unset($_SESSION[$this->bucket][$index]);
         }
     }

@@ -1,0 +1,57 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <form action="#" method="post">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Detalles</h3>
+                        <hr>
+
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email"
+                            class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Full name</label>
+                            <input type="text" name="name" id="name"
+                            class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Dirección de Envio</h3>
+                        <hr>
+
+
+                        <div class="form-group">
+                            <label for="address1">Primera dirección: </label>
+                            <input type="text" name="address1" id="address1" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                                <label for="address2">Segunda dirección: </label>
+                                <input type="text" name="address2" id="address2" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                                <label for="city">Ciudad: </label>
+                                <input type="text" name="city" id="city" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                                <label for="postal_code">Código postal: </label>
+                                <input type="text" name="postal_code" id="postal_code" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </form>
+{% endblock %}

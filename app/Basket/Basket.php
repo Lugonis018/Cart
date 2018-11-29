@@ -34,7 +34,8 @@ class Basket
             throw new QuantityExceededException;
         }
 
-        if($quantity === 0){
+        if($quantity == 0){
+            
             $this->remove($product);
             return;
         }
@@ -87,5 +88,29 @@ class Basket
     public function itemCount()
     {
         return count($this->storage);
+    }
+
+    public function subTotal()
+    {
+        $total = 0;
+
+        foreach ($this->all() as $item){
+            if($item->outOfStock()){
+                continue;
+            }
+
+            $total = $total + $item->price * $item->quantity;
+        }
+
+        return $total;
+    }
+
+    public function refresh()
+    {
+        foreach($this->all() as $item){
+            if (!$item->hasStock($item->quantity)){
+                $this->update($item, $item->stock);
+            }
+        }
     }
 }

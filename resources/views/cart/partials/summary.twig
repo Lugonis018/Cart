@@ -1,0 +1,22 @@
+<table class="table">
+    <tr>
+        <td>Sub total</td>
+        <td>S/. {{ basket.subTotal | number_format(2) }}</td>
+    </tr>
+    <tr>
+        <td>
+            Costo de envio
+        </td>
+        <td>
+            S/. 5.00
+        </td>
+    </tr>
+    <tr>
+        <td class="success">
+            Total
+        </td>
+        <td class="success">
+            S/. {{ (basket.subTotal + 5) | number_format(2) }}
+        </td>
+    </tr>
+</table>
