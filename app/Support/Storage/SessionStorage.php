@@ -24,12 +24,12 @@ class SessionStorage implements StorageInterface, Countable
 
     public function get($index)
     {
-        if($this->exists($index))
+        if(!$this->exists($index))
         {
             return null;
         }
 
-        return $SESSION[$this->bucket][$index];
+        return $_SESSION[$this->bucket][$index];
     }
 
     public function exists($index)
