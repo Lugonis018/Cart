@@ -1,2 +1,2 @@
 # carrito
-Esto es la prueba del carrito
+Proyecto de una carrito de compras en PHP
