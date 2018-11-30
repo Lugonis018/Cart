@@ -1,7 +1,7 @@
 {% extends 'templates/app.twig' %}
 
 {% block content %}
-    <form action="#" method="post">
+    <form action="{{ path_for('order.create') }}" method="post" autocomplete="off">
         <div class="row">
             <div class="col-md-8">
                 <div class="row">
@@ -10,16 +10,31 @@
                         <hr>
 
 
-                        <div class="form-group">
+                        <div class="form-group {% if errors.email %}
+                                has-error
+                            {% endif %}">
                             <label for="email">Email</label>
                             <input type="email" name="email" id="email"
-                            class="form-control">
+                            class="form-control" value="{{ old.email }}">
+                            {% if errors.email %}
+                                <span class="help-block">
+                                    {{ errors.email | first }}
+                                </span>
+                            {% endif %}
                         </div>
 
-                        <div class="form-group">
+
+                        <div class="form-group {% if errors.name %}
+                                has-error
+                            {% endif %}">
                             <label for="name">Full name</label>
                             <input type="text" name="name" id="name"
-                            class="form-control">
+                            class="form-control" value="{{ old.name }}">
+                            {% if errors.name %}
+                                <span class="help-block">
+                                    {{ errors.name | first }}
+                                </span>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -27,30 +42,68 @@
                         <hr>
 
 
-                        <div class="form-group">
+                        <div class="form-group {% if errors.address1 %}
+                                has-error
+                            {% endif %}">
                             <label for="address1">Primera dirección: </label>
-                            <input type="text" name="address1" id="address1" class="form-control">
+                            <input type="text" name="address1" id="address1" class="form-control" value="{{ old.address1 }}">
+                            {% if errors.address1 %}
+                                <span class="help-block">
+                                    {{ errors.address1 | first }}
+                                </span>
+                            {% endif %}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group {% if errors.address2 %}
+                                has-error
+                            {% endif %}">
                                 <label for="address2">Segunda dirección: </label>
-                                <input type="text" name="address2" id="address2" class="form-control">
+                                <input type="text" name="address2" id="address2" class="form-control"
+                                value="{{ old.address2 }}">
+                                {% if errors.address2 %}
+                                <span class="help-block">
+                                    {{ errors.address2 | first }}
+                                </span>
+                            {% endif %}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group {% if errors.city %}
+                                has-error
+                            {% endif %}">
                                 <label for="city">Ciudad: </label>
-                                <input type="text" name="city" id="city" class="form-control">
+                                <input type="text" name="city" id="city" class="form-control"
+                                value="{{ old.city }}">
+                                {% if errors.city %}
+                                <span class="help-block">
+                                    {{ errors.city | first }}
+                                </span>
+                            {% endif %}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group {% if errors.postal_code %}
+                                has-error
+                            {% endif %}">
                                 <label for="postal_code">Código postal: </label>
-                                <input type="text" name="postal_code" id="postal_code" class="form-control">
+                                <input type="text" name="postal_code" id="postal_code" class="form-control"
+                                value="{{ old.postal_code }}">
+                                {% if errors.postal_code %}
+                                <span class="help-block">
+                                    {{ errors.postal_code | first }}
+                                </span>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
+                <div class="well">
+                    <h4>Tu orden:</h4>
+                    <hr>
+                    {% include "cart/partials/contents.twig" %}
+                    {% include 'cart/partials/summary.twig' %}
 
+                    <button type="submit" class="btn btn-deafult"> Ordenar </button>
+                </div>
             </div>
         </div>
     </form>
