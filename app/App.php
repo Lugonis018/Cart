@@ -3,7 +3,7 @@
 namespace Cart;
 
 use DI\ContainerBuilder;
-use DI\Bridge\Slim\App as DiBridge;
+use DI\Bridge\Slim\App as DIBridge;
 
 class App extends DIBridge
 {

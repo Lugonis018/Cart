@@ -7,6 +7,7 @@ use Cart\Models\Product;
 use Cart\Models\Order;
 use Cart\Models\Customer;
 use Cart\Models\Address;
+use Cart\Models\Payment;
 use Slim\Views\TwigExtension;
 use Interop\Container\ContainerInterface;
 use Cart\Support\Storage\SessionStorage;
@@ -50,6 +51,10 @@ return [
 
     Address::class => function(ContainerInterface $c){
         return new Address;
+    },
+
+    Payment::class => function(ContainerInterface $c){
+        return new Payment;
     },
 
     Basket::class => function (ContainerInterface $c){
