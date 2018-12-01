@@ -4,7 +4,8 @@
         "slim/twig-view": "^2.4",
         "illuminate/database": "^5.7",
         "php-di/slim-bridge": "1.0.2",
-        "respect/validation": "^1.1"
+        "respect/validation": "^1.1",
+        "braintree/braintree_php": "^3.37"
     },
     "autoload":{
         "psr-4":{

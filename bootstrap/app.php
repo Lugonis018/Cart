@@ -2,6 +2,7 @@
 
 use Cart\App;
 use Slim\Views\Twig;
+
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 session_start();
@@ -26,6 +27,11 @@ $capsule->addConnection([
 
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
+
+Braintree_Configuration::environment('sandbox');
+Braintree_Configuration::merchantId('p7rdvcmsb8xdkf7c');
+Braintree_Configuration::publicKey('hhw57t6k5sbznm32');
+Braintree_Configuration::privateKey('5de71265f7ac73a4fc81e50f03ca028f');
 
 require __DIR__ . '/../app/routes.php';
 
