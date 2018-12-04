@@ -5,6 +5,7 @@
         <div class="col-md-4">
             <img src="{{product.image}}" alt="{{product.title}} image"
             class="thumbnail img-responsive">
+            
         </div>
         <div class="col-md-8">
             {% if product.hasLowStock() %}
@@ -17,10 +18,26 @@
 
             <h3>{{ product.title }}</h3>
             <p>{{ product.description }}</p>
-
+            <br>
+            <br>
+            
             {% if product.inStock() %}
                 <a href="{{ path_for('cart.add', { slug: product.slug, quantity: 1 }) }}" class="btn btn-default btn-sm">Add to Cart</a>
             {% endif %}
         </div>
+        <table class="table">
+                <thead>
+                    <tr>
+                        <th>Precio del producto:</th>
+                        <th>Cantidad disponible(en rollos):</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div> $ {{ product.price }}</div></td>
+                        <td><div>{{ product.stock     }}</div></td>
+                    </tr>
+                </tbody>
+            </table>
     </div>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block content %}
     <div class="row">
         <div class="col-md-14">
-            <head>Order # {{ order.id }}</head>
+            <head>Orden # {{ order.id }}</head>
             <hr>
 
             <div class="row">
@@ -27,9 +27,9 @@
             <hr>
 
             <p>
-                Envio : S/ 5.0 <br>
+                Envio : $ 5.0 <br>
                 <strong>
-                    Orden total :S/ {{ order.total + 5 | number_format(2)}}
+                    Orden total :$ {{ order.total + 5 | number_format(2)}}
                 </strong>
             </p>
         </div>

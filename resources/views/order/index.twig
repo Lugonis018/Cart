@@ -13,7 +13,7 @@
                         <div class="form-group {% if errors.email %}
                                 has-error
                             {% endif %}">
-                            <label for="email">Email</label>
+                            <label for="email">Email:</label>
                             <input type="email" name="email" id="email"
                             class="form-control" value="{{ old.email }}">
                             {% if errors.email %}
@@ -27,7 +27,7 @@
                         <div class="form-group {% if errors.name %}
                                 has-error
                             {% endif %}">
-                            <label for="name">Full name</label>
+                            <label for="name">Nombre del recibidor:</label>
                             <input type="text" name="name" id="name"
                             class="form-control" value="{{ old.name }}">
                             {% if errors.name %}
@@ -36,6 +36,8 @@
                                 </span>
                             {% endif %}
                         </div>
+                        exte
+
                     </div>
                     <div class="col-md-6">
                         <h3>Dirección de Envio</h3>
@@ -94,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-
+    
 
                 <h3>Métodos de Pago</h3>
                 <hr>
