@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-12-2018 a las 21:23:25
+-- Tiempo de generación: 04-12-2018 a las 04:52:20
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.10
 
@@ -115,6 +115,13 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id`, `title`, `slug`, `description`, `price`, `image`, `stock`, `created_at`, `updated_at`) VALUES
+(1, 'Folclórico ornamento indio textil tejido de color rojo', 'Folclórico ornamento indio textil tejido de color rojo', 'Folclórico ornamento indio textil tejido de color rojo', 100, 'https://previews.123rf.com/images/goldnetz/goldnetz1505/goldnetz150500145/51085160-folcl%C3%B3rico-ornamento-indio-textil-tejido-de-color-rojo-fondo-abstracto.jpg', 1343, '2018-12-04 02:48:59', '2018-12-04 02:48:59');
+
 -- --------------------------------------------------------
 
 --
@@ -198,10 +205,34 @@ ALTER TABLE `addresses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `orders_products`
+--
+ALTER TABLE `orders_products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
